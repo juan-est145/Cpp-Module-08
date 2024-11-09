@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 14:10:15 by juestrel          #+#    #+#             */
-/*   Updated: 2024/11/09 15:10:05 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/11/09 16:25:24 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,13 @@ void Span::addNumber(int n)
 	if (currSize == this->_maxSize)
 		throw Span::MaxSize();
 	this->_span.push_back(n);
+}
+
+void Span::addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+	if (std::distance(begin, end) + this->_span.size() > this->_maxSize)
+		throw Span::MaxSize();
+	this->_span.insert(this->_span.end(), begin, end);
 }
 
 unsigned int Span::longestSpan(void) const

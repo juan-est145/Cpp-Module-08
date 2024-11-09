@@ -22,6 +22,7 @@ public:
 	unsigned int getMaxSize(void) const;
 	unsigned int getSize(void) const;
 	void addNumber(int n);
+	void addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 	unsigned int longestSpan(void) const;
 	unsigned int shortestSpan(void) const;
 	~Span(void);
