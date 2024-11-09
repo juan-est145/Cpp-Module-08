@@ -1,11 +1,11 @@
-NAME = easyFind.out
+NAME = span.out
 
 SRCS = main.cpp\
+Span.cpp\
 
 OBJS = $(SRCS:.cpp=.o)
 
-HEADER = easyfind.hpp\
-easyfind.tpp\
+HEADER = Span.hpp\
 
 CXX = $(shell which c++ clang++ g++ | head -n 1)
 
